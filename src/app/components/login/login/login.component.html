@@ -8,23 +8,26 @@
             <p class="card-category">Inicio de sesion</p>
           </div>
           <div class="card-body container-form-login">
-            <form>
+            <form [formGroup]="loginForm">
               <div class="row">
                 <div class="col-sm-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput type="text" placeholder="Ingrese Usuario" />
+                    <input matInput type="text" placeholder="Ingrese Usuario" formControlName="username" />
                   </mat-form-field>
                 </div>
                 <div class="col-sm-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput type="text" placeholder="Ingrese Password" />
+                    <input matInput type="password" placeholder="Ingrese Password" formControlName="password" />
                   </mat-form-field>
                 </div>
-                <div class="col-sm-4" (click)="login()">
-                  <button mat-raised-button type="submit" class="btn btn-danger pull-left">
+                <div class="col-sm-4">
+                  <button mat-raised-button type="submit" class="btn btn-danger pull-left" (click)="login()" [disabled]="loginForm.invalid">
                     Iniciar sesion
                   </button>
                 </div>
+              </div>
+              <div *ngIf="noValidos">
+                usuario o contraseña invalidos
               </div>
 
               <div class="clearfix"></div>

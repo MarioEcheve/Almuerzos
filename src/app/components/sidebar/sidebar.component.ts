@@ -27,12 +27,6 @@ export const ROUTES: RouteInfo[] = [
     icon: 'library_books',
     class: '',
   },
-  {
-    path: '/login',
-    title: 'Salir',
-    icon: 'library_books',
-    class: '',
-  },
 ];
 
 @Component({
