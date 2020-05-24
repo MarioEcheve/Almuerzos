@@ -3,6 +3,8 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'app/core/user/usuario.service';
+import { IUser } from 'app/core/user/user.model';
+import { LoginService } from 'app/core/login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +17,15 @@ export class NavbarComponent implements OnInit {
   mobile_menu_visible: any = 0;
   private toggleButton: any;
   private sidebarVisible: boolean;
-  usuarioActual = {};
+  usuarioActual: IUser;
 
-  constructor(location: Location, private element: ElementRef, private router: Router, private usuarioService: UsuarioService) {
+  constructor(
+    location: Location,
+    private element: ElementRef,
+    private router: Router,
+    private usuarioService: UsuarioService,
+    private loginService: LoginService
+  ) {
     this.location = location;
     this.sidebarVisible = false;
   }
@@ -127,5 +135,10 @@ export class NavbarComponent implements OnInit {
       }
     }
     return 'Dashboard';
+  }
+
+  logOut() {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 }

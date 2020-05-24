@@ -1,6 +1,7 @@
 .container {
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-left: auto;
 }
 .container-form-login {
   align-self: left;

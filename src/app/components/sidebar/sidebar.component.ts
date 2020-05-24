@@ -22,7 +22,13 @@ export const ROUTES: RouteInfo[] = [
     class: '',
   },
   {
-    path: '/typography',
+    path: '/centro-costos',
+    title: 'Registro Centro de Costos',
+    icon: 'content_paste',
+    class: '',
+  },
+  {
+    path: '/notifications',
     title: 'Reportes',
     icon: 'library_books',
     class: '',

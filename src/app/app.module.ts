@@ -26,6 +26,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { CentroCostosComponent } from './centro-costos/centro-costos.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,7 @@ import { MatSelectModule } from '@angular/material/select';
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY',
     }),
   ],
-  declarations: [AppComponent, AdminLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, CentroCostosComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
