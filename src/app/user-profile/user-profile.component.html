@@ -2,7 +2,27 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div class="card">
+        <button
+          mat-fab
+          color="warn"
+          aria-label="Example icon button with a home icon"
+          class="botonAdd"
+          (click)="muestra()"
+          *ngIf="!muestraTabla"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button
+          mat-fab
+          color="warn"
+          aria-label="Example icon button with a home icon"
+          class="botonAdd"
+          (click)="muestra()"
+          *ngIf="muestraTabla"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="card" *ngIf="!muestraTabla">
           <div class="card-header card-header-danger">
             <h4 class="card-title">Trabajador</h4>
             <p class="card-category">Complete el formulario</p>
@@ -55,9 +75,106 @@
             </form>
           </div>
         </div>
+        <div class="card" *ngIf="muestraTabla">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Trabajadores</h4>
+            <p class="card-category">Lista de trabajadores</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>
+                    ID
+                  </th>
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Apellidos
+                  </th>
+                  <th>
+                    Centro de Costo
+                  </th>
+                  <th>
+                    Acciones
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Dakota Rice
+                    </td>
+                    <td>
+                      Niger
+                    </td>
+                    <td>
+                      Oud-Turnhout
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Dakota Rice
+                    </td>
+                    <td>
+                      Niger
+                    </td>
+                    <td>
+                      Oud-Turnhout
+                    </td>
+                    <td class="text-primary">
+                      Almuerzo
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Dakota Rice
+                    </td>
+                    <td>
+                      Niger
+                    </td>
+                    <td>
+                      Oud-Turnhout
+                    </td>
+                    <td class="text-primary">
+                      Colacion
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Dakota Rice
+                    </td>
+                    <td>
+                      Niger
+                    </td>
+                    <td>
+                      Oud-Turnhout
+                    </td>
+                    <td class="text-primary">
+                      Cena
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <!--
   <div class="main-content">
   <div class="container-fluid">

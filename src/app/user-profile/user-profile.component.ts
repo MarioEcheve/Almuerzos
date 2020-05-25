@@ -12,6 +12,7 @@ declare var $: any;
 })
 export class UserProfileComponent implements OnInit {
   centroCostos: ICentroCostos[] = [];
+  muestraTabla = true;
   trabajadorForm = this.fb.group({
     rut: ['', Validators.required],
     nombre: ['', Validators.required],
@@ -108,5 +109,13 @@ export class UserProfileComponent implements OnInit {
           '</div>',
       }
     );
+  }
+  muestra() {
+    this.trabajadorForm.reset();
+    if (this.muestraTabla == false) {
+      this.muestraTabla = true;
+    } else {
+      this.muestraTabla = false;
+    }
   }
 }
