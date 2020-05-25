@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
   {
     path: '/user-profile',
-    title: 'Registro Trabajador',
+    title: 'Trabajador',
     icon: 'person',
     class: '',
   },
@@ -23,7 +23,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/centro-costos',
-    title: 'Registro Centro de Costos',
+    title: 'Centro de Costos',
     icon: 'content_paste',
     class: '',
   },
