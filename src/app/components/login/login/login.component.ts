@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         res => {
           this.usuarioService.changeUsuarioActual(res);
 
-          this.showNotification('top', 'right');
+          this.showNotification('top', 'right', res);
           this.router.navigate(['']);
           this.authenticationError = false;
           //this.activeModal.close();
@@ -58,15 +58,15 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  showNotification(from, align) {
+  showNotification(from, align, usuario) {
     const type = ['', 'info', 'success', 'warning', 'danger'];
 
-    const color = Math.floor(Math.random() * 4 + 1);
+    const color = 2;
 
     $.notify(
       {
         icon: 'notifications',
-        message: 'Bienvenido ',
+        message: 'Bienvenido ' + usuario.firstName + ' ' + usuario.lastName,
       },
       {
         type: type[color],

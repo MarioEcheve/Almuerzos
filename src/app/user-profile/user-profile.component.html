@@ -8,51 +8,46 @@
             <p class="card-category">Complete el formulario</p>
           </div>
           <div class="card-body">
-            <form>
+            <form [formGroup]="trabajadorForm">
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Rut" />
+                    <input matInput placeholder="Rut" formControlName="rut" />
                   </mat-form-field>
                 </div>
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" />
+                    <input matInput placeholder="Nombre" formControlName="nombre" />
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Apellido" />
+                    <input matInput placeholder="Apellido" formControlName="apellidos" />
                   </mat-form-field>
                 </div>
                 <div class="col-md-5">
                   <mat-form-field>
                     <mat-label>Centro de Costo</mat-label>
-                    <mat-select>
-                      <mat-option
-                        *ngFor="let food of foods"
-                        [value]="food.value"
-                      >
-                        {{ food.viewValue }}
+                    <mat-select formControlName="centroCostos">
+                      <mat-option *ngFor="let centroCosto of centroCostos" [value]="centroCosto">
+                        {{ centroCosto.nombre }}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
               </div>
 
-              <button
-                mat-raised-button
-                type="submit"
-                class="btn btn-danger pull-right"
-              >
+              <button mat-raised-button type="submit" class="btn btn-danger pull-right">
                 Cancelar
               </button>
               <button
                 mat-raised-button
                 type="submit"
                 class="btn btn-danger pull-right"
+                [disabled]="trabajadorForm.invalid"
+                (click)="save()"
               >
                 Guardar
               </button>

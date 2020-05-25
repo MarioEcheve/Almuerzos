@@ -8,24 +8,30 @@
             <p class="card-category">Registro Centro de Costos</p>
           </div>
           <div class="card-body">
-            <form>
+            <form [formGroup]="centroCostosForm">
               <div class="row container">
                 <div class="col-md-2">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Codigo" />
+                    <input matInput placeholder="Codigo" formControlName="codigo" />
                   </mat-form-field>
                 </div>
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" />
+                    <input matInput placeholder="Nombre" formControlName="nombre" />
                   </mat-form-field>
                 </div>
               </div>
               <div>
-                <button mat-raised-button type="submit" class="btn btn-danger pull-right">
+                <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="cancelar()">
                   Cancelar
                 </button>
-                <button mat-raised-button type="submit" class="btn btn-danger pull-right">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-danger pull-right"
+                  (click)="save()"
+                  [disabled]="centroCostosForm.invalid"
+                >
                   Guardar
                 </button>
               </div>
